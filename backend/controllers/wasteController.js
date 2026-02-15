@@ -275,8 +275,7 @@ exports.addFeedback = async (req, res) => {
       rating,
       comment,
       createdAt: Date.now(),
-      isPublic: true,
-      isFeatured: true // Auto-feature for immediate visibility
+      isPublic: true
     };
 
     await request.save();
@@ -340,8 +339,6 @@ exports.toggleFeatured = async (req, res) => {
     }
 
     request.feedback.isFeatured = !request.feedback.isFeatured;
-    
-    request.markModified('feedback');
     await request.save();
 
     res.status(200).json({

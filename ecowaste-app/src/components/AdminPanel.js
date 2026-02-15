@@ -1,5 +1,5 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import { X, Package, TrendingUp, DollarSign, Search, CheckCircle, Edit, Star } from 'lucide-react';
+import React, { useEffect, useState } from 'react';
+import { X, Package, TrendingUp, Users, DollarSign, Search, Filter, CheckCircle, Edit, Star } from 'lucide-react';
 import { wasteAPI } from '../services/api';
 import StatusBadge from './StatusBadge';
 
@@ -15,7 +15,13 @@ export default function AdminPanel({ isOpen, onClose }) {
     pricePerKg: ''
   });
 
-  const fetchRequests = useCallback(async () => {
+  useEffect(() => {
+    if (isOpen) {
+      fetchRequests();
+    }
+  }, [isOpen, filter]);
+
+  const fetchRequests = async () => {
     try {
       setLoading(true);
       const response = await wasteAPI.getAllRequests({ status: filter === 'all' ? '' : filter });
@@ -27,15 +33,7 @@ export default function AdminPanel({ isOpen, onClose }) {
     } finally {
       setLoading(false);
     }
-  }, [filter]);
-
-  useEffect(() => {
-    if (isOpen) {
-      fetchRequests();
-    }
-  }, [isOpen, filter, fetchRequests]);
-
-
+  };
 
   const handleUpdateStatus = async (requestId) => {
     try {
