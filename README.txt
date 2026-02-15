@@ -32,51 +32,13 @@ The application will be accessible at http://localhost:3000
 
 4. ADMIN CREDENTIALS & ACCESS GUIDE
 ------------------------------------------------------------------------------
-Currently, the system uses an email-based role assignment.
+[MOVED TO LOCAL FILE: ADMIN_SECRETS.txt]
+For security reasons, admin credentials and configuration instructions 
+are not included in this public repository.
 
-How to get Admin Access:
-1. Go to the Sign Up page.
-2. Sign up with the email: admin@ecowaste.com
-3. Set ANY password you want (e.g., admin123).
-4. The system automatically detects this email and grants Admin privileges.
+Please refer to `ADMIN_SECRETS.txt` in your local environment if available.
 
-5. HOW TO CHANGE / ADD / REMOVE ADMINS
-------------------------------------------------------------------------------
-If you want to change who is an admin, you need to edit the backend code.
-
-File Location: 
-backend/controllers/authController.js
-
-Step-by-Step Guide:
-
-1. Open `backend/controllers/authController.js` in your code editor.
-2. Search for the `register` function (around line 27).
-3. Find the line that looks like this:
-   const role = email === 'admin@ecowaste.com' ? 'admin' : 'user';
-
-------------------------------------------------------------------------------
-To CHANGE the admin email:
-   Replace 'admin@ecowaste.com' with your desired email.
-   
-   Example:
-   const role = email === 'myemail@gmail.com' ? 'admin' : 'user';
-
-------------------------------------------------------------------------------
-To ADD MULTIPLE admins:
-   Change the logic to check against a list of emails.
-
-   Example:
-   const adminEmails = ['admin@ecowaste.com', 'manager@ecowaste.com', 'boss@gmail.com'];
-   const role = adminEmails.includes(email) ? 'admin' : 'user';
-
-------------------------------------------------------------------------------
-To REMOVE an admin:
-   Simply remove their email from the list or change the email back to the original one.
-   If a user has already registered as an admin, changing the code won't strip their 
-   role immediately unless you also update their document in the database (MongoDB).
-   However, new signups will follow the new rule.
-
-6. TECHNOLOGIES USED
+5. TECHNOLOGIES USED
 ------------------------------------------------------------------------------
 Frontend: React.js, Tailwind CSS, Lucide React (Icons), Axios
 Backend: Node.js, Express.js, MongoDB (Mongoose), JSON Web Tokens (JWT), Multer
