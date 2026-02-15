@@ -41,7 +41,7 @@ export const AuthProvider = ({ children }) => {
       setLoading(false);
     };
     initAuth();
-  }, []);
+  }, [refreshUser]);
 
   const login = async (credentials) => {
     try {

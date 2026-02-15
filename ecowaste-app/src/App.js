@@ -1460,7 +1460,7 @@ export default function ModernWasteFoodExchange() {
           </div>
 
           <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-            <p>&copy; 2024 EcoWaste. All rights reserved.</p>
+            <p>&copy; 2026 EcoWaste. All rights reserved.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <button className="hover:text-emerald-400 transition text-sm">
                 Privacy

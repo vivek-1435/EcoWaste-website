@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { X, TrendingUp, Package, DollarSign, Calendar, Weight, MapPin, Phone, Mail, Star } from 'lucide-react';
+import { X, TrendingUp, Package, DollarSign, Calendar, Weight, MapPin, Star } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { wasteAPI } from '../services/api';
 import StatusBadge from './StatusBadge';
@@ -14,7 +14,6 @@ export default function Dashboard({ isOpen, onClose }) {
     totalRequests: 0,
     pending: 0,
     completed: 0,
-    totalEarnings: 0,
     totalEarnings: 0,
     totalWeight: 0
   });
