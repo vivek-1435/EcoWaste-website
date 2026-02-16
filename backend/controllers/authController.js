@@ -26,7 +26,7 @@ exports.register = async (req, res) => {
     // Determine role - auto-assign admin for specific email
     // const role = email === 'admin@ecowaste.com' ? 'admin' : 'user';
     const adminEmails = ['admin@ecowaste.com', 'admin2@ecowaste.com', 'boss@ecowaste.com'];
-const role = adminEmails.includes(email) ? 'admin' : 'user';
+    const role = adminEmails.includes(email) ? 'admin' : 'user';
 
 
     // Create user
