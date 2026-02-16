@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
       const response = await authAPI.getProfile();
       if (response.success) {
         setUser(response.data);
-        localStorage.setItem('user', JSON.stringify(response.data));
+        sessionStorage.setItem('user', JSON.stringify(response.data.data));
         return true;
       }
     } catch (error) {
